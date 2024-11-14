@@ -1,6 +1,5 @@
 import 'package:cityguid/firebase_options.dart';
 import 'package:cityguid/views/LoginScreen.dart';
-import 'package:cityguid/views/ProfilePage.dart';
 import 'package:cityguid/views/SignupScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +36,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: ProfilePage(),
+      home: Loginscreen(),
     );
   }
 }
