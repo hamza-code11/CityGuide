@@ -1,6 +1,6 @@
-
 import 'package:cityguid/colors/Colors.dart';
 import 'package:cityguid/image/Images.dart';
+import 'package:cityguid/views/LoginScreen.dart';
 import 'package:cityguid/views/SplashScreen2.dart';
 import 'package:flutter/material.dart';
 
@@ -16,21 +16,31 @@ class Splashscreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 15, right: 15, top: 80, bottom: 10),
-              child: Row(
+                padding: const EdgeInsets.only(
+                    left: 15, right: 15, top: 80, bottom: 10),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image.asset(ImagesPath.logoonboarding),
-                    const Text(
-                      "Skip",
-                      style: TextStyle(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Loginscreen()),
+                        );
+                      },
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.w300,
-                          color: Color.fromARGB(255, 135, 130, 130)),
-                    )
-                  ]),
-            ),
+                          color: Color.fromARGB(255, 135, 130, 130),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
             const SizedBox(height: 10),
             Row(children: [
               Image.asset(

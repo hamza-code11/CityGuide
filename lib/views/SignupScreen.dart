@@ -11,11 +11,11 @@ import '../widgets/LoginSignupTextField.dart';
 class Signupscreen extends StatelessWidget {
   const Signupscreen({super.key});
 
-   @override
+  @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
     return Scaffold(
-      backgroundColor: CustomColors.LoginSignupbackColor, 
+      backgroundColor: CustomColors.LoginSignupbackColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
@@ -29,42 +29,44 @@ class Signupscreen extends StatelessWidget {
               height: Get.height * 0.04,
             ),
             // Email Text Field
-                Loginsignuptextfield(
-                  controller: controller.emailController,
-                    hinttext: "Email",
-                    hintTextColor: Colors.grey,
-                    borderRadius: 8,
-                    borderSideColor: Colors.white60,
-                    textColor: Colors.white,
-                    ),
-                SizedBox(
+            Loginsignuptextfield(
+              controller: controller.emailController,
+              hinttext: "Email",
+              hintTextColor: Colors.grey,
+              borderRadius: 8,
+              borderSideColor: Colors.white60,
+              textColor: Colors.white,
+            ),
+            SizedBox(
               height: Get.height * 0.02,
             ),
-                // pass Text Field
-              Obx(() => Loginsignuptextfield(
-                obscureText: controller.isObsecure.value, // Use the observable value
-                controller: controller.passController,
-                hinttext: "Password",
-                hintTextColor: Colors.grey,
-                borderRadius: 8,
-                borderSideColor: Colors.white60,
-                textColor: Colors.white,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    controller.isToggle(); // Call the toggle function
-                  },
-                  icon: Icon(
-                    controller.isObsecure.value ? Icons.visibility : Icons.visibility_off,
-                    color: Colors.grey,
+            // pass Text Field
+            Obx(() => Loginsignuptextfield(
+                  obscureText:
+                      controller.isObsecure.value, // Use the observable value
+                  controller: controller.passController,
+                  hinttext: "Password",
+                  hintTextColor: Colors.grey,
+                  borderRadius: 8,
+                  borderSideColor: Colors.white60,
+                  textColor: Colors.white,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      controller.isToggle(); // Call the toggle function
+                    },
+                    icon: Icon(
+                      controller.isObsecure.value
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-              )),
-
+                )),
 
             SizedBox(
               height: Get.height * 0.01,
             ),
-          
+
             SizedBox(
               height: Get.height * 0.04,
             ),
@@ -83,36 +85,34 @@ class Signupscreen extends StatelessWidget {
 
             // "Do not have an account?" Text
             Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Do you have an account",
-                      style: GoogleFonts.inter(
-                        color: Colors.grey, 
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Loginscreen()));
-                      },
-                      child: Text(
-                        "Sign In",
-                         style: GoogleFonts.inter(
-                        color: Colors.grey, 
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      ),
-                    )
-                  ],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Do you have an account",
+                  style: GoogleFonts.inter(
+                    color: Colors.grey,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Loginscreen()));
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: GoogleFonts.inter(
+                      color: Colors.grey,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),

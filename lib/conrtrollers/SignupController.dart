@@ -13,34 +13,35 @@ class SignupController extends GetxController {
   final passController = TextEditingController();
 
   final FirebaseAuth auth = FirebaseAuth.instance;
-  final user = FirebaseAuth.instance.currentUser;
-
-  final String uid = Timestamp.now().nanoseconds.toString();
 
   void isToggle() {
     isObsecure.value = !isObsecure.value;
   }
 
-  void signup() {
-    auth
-        .createUserWithEmailAndPassword(
-            email: emailController.text.trim(),
-            password: passController.text.trim())
-        .then((value) async {
-      await FirebaseFirestore.instance
-          .collection("User")
-          .doc(emailController.text.trim())
-          .set({
+  void signup() async {
+    try {
+      // Create a user with Firebase Authentication
+      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passController.text.trim(),
+      );
+
+      // Get the unique user ID (uid) from Firebase Authentication
+      String uid = userCredential.user?.uid ?? "";
+
+      // Save user data to Firestore
+      await FirebaseFirestore.instance.collection("User").doc(uid).set({
+        "id": uid, // Save the unique ID
         "email": emailController.text.trim(),
-        "password": passController.text.trim(),
+        "password": passController.text.trim(), // Avoid plaintext passwords in production
+        "createdAt": FieldValue.serverTimestamp(), // Timestamp for record creation
       });
-      Get.snackbar("Success", "User Registration.");
-      update();
+
+      Get.snackbar("Success", "User registered successfully.");
       Get.to(() => const Loginscreen());
-    }).onError((error, stacktrace) {
+    } catch (error) {
       log("Error: $error");
-      log("Stacktrace: $stacktrace");
-      Get.snackbar("Error", error.toString()); // Show the actual error message
-    });
+      Get.snackbar("Error", error.toString());
+    }
   }
 }

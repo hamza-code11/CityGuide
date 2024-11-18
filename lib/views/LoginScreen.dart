@@ -52,7 +52,7 @@ class Loginscreen extends StatelessWidget {
                   textColor: Colors.white,
                   suffixIcon: IconButton(
                     onPressed: () {
-                      controller.isToggle(); // Call the toggle function
+                      controller.togglePasswordVisibility(); // Call the toggle function
                     },
                     icon: Icon(
                       controller.isObsecure.value
@@ -81,7 +81,7 @@ class Loginscreen extends StatelessWidget {
             CustomButton(
               text: "Login",
               onPressed: () {
-                controller.sigin();
+                controller.signIn();
               },
               backgroundColor: Colors.blue,
               textColor: Colors.white,
