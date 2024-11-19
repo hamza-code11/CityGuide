@@ -1,8 +1,9 @@
 class ImagesPath {
-  
   static String login = "assets/images/login.png";
   static String Coveriamge = "assets/images/Coveriamge.png";
   static String ManImage = "assets/images/ManImage.png";
+  static String hospital1 = "assets/images/hospital1.png";
+  static String hospital2 = "assets/images/hospital2.png";
 
   static String logoonboarding = "assets/images/logo2.png";
   static String onboard = "assets/images/onboard.png";
