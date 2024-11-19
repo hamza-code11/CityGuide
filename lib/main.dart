@@ -38,13 +38,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // Define the routes here
-      initialRoute: '/login', // Set login screen as the initial route
-      getPages: [
-        GetPage(
-            name: '/login', page: () => Loginscreen()), // Login screen route
-        // Add other routes as needed
-      ],
+      // // Define the routes here
+      // initialRoute: '/login', // Set login screen as the initial route
+      // getPages: [
+      //   GetPage(
+      //       name: '/login', page: () => Startscreen()), // Login screen route
+      //   // Add other routes as needed
+      // ],
+      home: Startscreen(),
     );
   }
 }

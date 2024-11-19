@@ -1,9 +1,9 @@
 import 'package:cityguid/views/IndexScreen.dart';
+import 'package:cityguid/views/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../colors/Colors.dart';
-import '../conrtrollers/LogoutController.dart';
 import '../widgets/CustomButtom.dart';
 import '../widgets/SocialLoginButton.dart';
 
@@ -209,12 +209,11 @@ class Profilepage extends StatelessWidget {
                           TextButton(
                             child: const Text('OK'),
                             onPressed: () {
-                              // Call the logout method from the LogoutController
-                              final logoutController =
-                                  Get.put(LogoutController());
-                              logoutController
-                                  .logout(); // Direct logout operation
-                              Navigator.of(context).pop(); // Close the dialog
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const Loginscreen()));
                             },
                           ),
                         ],
