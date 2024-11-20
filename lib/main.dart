@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       //       name: '/login', page: () => Startscreen()), // Login screen route
       //   // Add other routes as needed
       // ],
-      home: HospitalScreen(),
+      home: Startscreen(),
     );
   }
 }
