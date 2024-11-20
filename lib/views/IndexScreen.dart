@@ -123,7 +123,7 @@ class _IndexscreenState extends State<Indexscreen> {
                                 decoration: InputDecoration(
                                   hintText: 'Search here...',
                                   hintStyle:
-                                      const TextStyle(color: Colors.white),
+                                      const TextStyle(color: Colors.white, fontSize: 24),
                                   prefixIcon: const Icon(Icons.search,
                                       color: Colors.white),
                                   border: OutlineInputBorder(

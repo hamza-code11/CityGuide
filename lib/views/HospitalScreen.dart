@@ -1,6 +1,11 @@
 import 'package:cityguid/image/Images.dart';
 import 'package:flutter/material.dart';
+
 import '../widgets/HospitalCard.dart';
+
+
+import '../colors/Colors.dart';
+
 
 void main() {
   runApp(const HospitalApp());
@@ -60,18 +65,48 @@ class HospitalScreen extends StatelessWidget {
           ),
         ),
       ),
+      backgroundColor: CustomColors.LoginSignupbackColor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Search Hospitals',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.0),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(221, 43, 43, 43),
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3), // Outer shadow
+                          spreadRadius: 2,
+                          blurRadius: 6,
+                          offset: Offset(2, 4), // Shadow position
+                        ),
+                      ],
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search here...',
+                        hintStyle:
+                            const TextStyle(color: Colors.white54, fontSize: 18),
+                        prefixIcon:
+                            const Icon(Icons.search, color: Colors.white),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 0,
+                        ),
+                      ),
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             const SizedBox(height: 16),
             Expanded(
