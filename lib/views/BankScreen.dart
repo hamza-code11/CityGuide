@@ -1,5 +1,6 @@
 import 'package:cityguid/image/Images.dart';
 import 'package:flutter/material.dart';
+
 import '../widgets/HospitalCard.dart';
 
 void main() {
@@ -12,53 +13,49 @@ class HospitalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hospitals',
-      home: HospitalScreen(),
+      title: 'Banks',
+      home: Bankscreen(),
     );
   }
 }
 
-class HospitalScreen extends StatelessWidget {
+class Bankscreen extends StatelessWidget {
   final List<Hospital> hospitals = [
     Hospital(
-      name: 'SV Medical Hall',
+      name: 'Habib Metro',
       address:
-          '3729+5CH, Medak-Yellareddy Rd, Fathe Nagar, Medak, Telangana, India',
+          'V3G5+XMQ, Block 3 P.E.C.H.S., Karachi, Karachi City, Sindh, Pakistan',
       distance: '3.8 km',
       rating: 4.7,
-      imagepath: ImagesPath.hospital1, // Replace with actual image URL
+      imagepath: ImagesPath.habibmetro, 
     ),
     Hospital(
-      name: 'Aditya Hospital',
-      address: '27MV+M8R, Auto Nagar, Medak, Telangana 503111, India',
+      name: 'Meezan Bank',
+      address: 'Plot No. 28, Adam Arcade, Bihar Muslim Society BMCHS Sharafabad, Karachi, Karachi City, Sindh, Pakistan',
       distance: '4.1 km',
       rating: 4.1,
-      imagepath: ImagesPath.hospital2, // Replace with actual image URL
+      imagepath: ImagesPath.meezanbank, 
+    ),
+    Hospital(
+      name: 'United Bank Limited',
+      address: 'Plot No. 28, Adam Arcade, Bihar Muslim Society BMCHS Sharafabad, Karachi, Karachi City, Sindh, Pakistan',
+      distance: '4.1 km',
+      rating: 4.1,
+      imagepath: ImagesPath.ubl, 
     ),
   ];
 
-  HospitalScreen({super.key}); // Fixed constructor
+  Bankscreen({super.key}); // Fixed constructor
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60), // Set the height of the AppBar
-        child: ClipRRect(
-          borderRadius: const BorderRadius.vertical(
-            bottom: Radius.circular(20), // Set the bottom border radius
-          ),
-          child: AppBar(
-            title: const Text(
-              'Hospitals',
-              style: TextStyle(
+      appBar: AppBar(
+        title: const Text('Hospitals',
+          style: TextStyle(
                 fontSize: 30,
-              ),
-            ),
-            backgroundColor: Colors.orange,
-            elevation: 0, // Remove the default shadow for better appearance
-          ),
-        ),
+        ),),
+        backgroundColor: Colors.orange,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -89,3 +86,4 @@ class HospitalScreen extends StatelessWidget {
     );
   }
 }
+

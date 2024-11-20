@@ -1,3 +1,5 @@
+import 'package:cityguid/views/BankScreen.dart';
+import 'package:cityguid/views/HospitalScreen.dart';
 import 'package:cityguid/views/ProfilePage.dart';
 import 'package:cityguid/widgets/CategoryCard.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +9,7 @@ class Indexscreen extends StatefulWidget {
   final String email;
   final String password;
 
-  const Indexscreen({required this.email, required this.password, Key? key})
-      : super(key: key);
+  const Indexscreen({required this.email, required this.password, super.key});
 
   @override
   State<Indexscreen> createState() => _IndexscreenState();
@@ -84,7 +85,7 @@ class _IndexscreenState extends State<Indexscreen> {
                           ),
                         ],
                       ),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         radius: 25,
                         backgroundImage: AssetImage(
                             "assets/images/ManImage.png"), // Replace with your avatar image
@@ -162,38 +163,86 @@ class _IndexscreenState extends State<Indexscreen> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
-                children: const [
+                children: [
                   CategoryCard(
                     title: 'Hospitals',
                     imagePath: 'assets/images/p1.jpg',
+                      onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Pharmacy',
                     imagePath: 'assets/images/p2.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Schools',
                     imagePath: 'assets/images/p3.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Plumbers',
                     imagePath: 'assets/images/p4.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Electricians',
                     imagePath: 'assets/images/p5.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Hair Salon',
                     imagePath: 'assets/images/p6.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Colleges',
                     imagePath: 'assets/images/p7.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => HospitalScreen()),
+                          );
+                      },
                   ),
                   CategoryCard(
                     title: 'Banks',
                     imagePath: 'assets/images/p8.jpg',
+                     onTap: () {
+                         Navigator.push(
+                            context,
+                              MaterialPageRoute(builder: (context) => Bankscreen()),
+                          );
+                      },
                   ),
                 ],
               ),

@@ -1,5 +1,6 @@
 import 'package:cityguid/image/Images.dart';
 import 'package:flutter/material.dart';
+
 import '../widgets/HospitalCard.dart';
 
 void main() {
@@ -42,23 +43,11 @@ class HospitalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60), // Set the height of the AppBar
-        child: ClipRRect(
-          borderRadius: const BorderRadius.vertical(
-            bottom: Radius.circular(20), // Set the bottom border radius
-          ),
-          child: AppBar(
-            title: const Text(
-              'Hospitals',
-              style: TextStyle(
+      appBar: AppBar(
+        title: const Text('Hospitals',     style: TextStyle(
                 fontSize: 30,
-              ),
-            ),
-            backgroundColor: Colors.orange,
-            elevation: 0, // Remove the default shadow for better appearance
-          ),
-        ),
+              ),),
+        backgroundColor: Colors.orange,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

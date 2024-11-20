@@ -1,9 +1,7 @@
 import 'package:cityguid/firebase_options.dart';
-import 'package:cityguid/views/IndexScreen.dart';
-import 'package:cityguid/views/LoginScreen.dart';
-import 'package:cityguid/views/ProfilePage.dart';
-import 'package:cityguid/views/SignupScreen.dart';
-import 'package:cityguid/views/StartScreen.dart';
+import 'package:cityguid/views/BankScreen.dart';
+//import 'package:cityguid/views/HospitalScreen.dart';
+//import 'package:cityguid/views/StartScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,14 +36,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // // Define the routes here
-      // initialRoute: '/login', // Set login screen as the initial route
-      // getPages: [
-      //   GetPage(
-      //       name: '/login', page: () => Startscreen()), // Login screen route
-      //   // Add other routes as needed
-      // ],
-      home: Startscreen(),
+
+      home:  Bankscreen(),
     );
   }
 }

@@ -80,7 +80,7 @@ class Signupscreen extends StatelessWidget {
               textColor: Colors.white,
               borderRadius: 8.0,
               elevation: 4.0,
-              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
             ),
 
             // "Do not have an account?" Text

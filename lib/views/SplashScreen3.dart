@@ -26,7 +26,7 @@ class Splashscreen3 extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Loginscreen()),
+                              builder: (context) => const Loginscreen()),
                         );
                       },
                       child: const Text(
