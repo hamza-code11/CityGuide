@@ -1,6 +1,8 @@
 import 'package:cityguid/firebase_options.dart';
+import 'package:cityguid/views/CategoryDetails.dart';
 import 'package:cityguid/views/IndexScreen.dart';
 import 'package:cityguid/views/LoginScreen.dart';
+import 'package:cityguid/views/MapDirectionScreen.dart';
 import 'package:cityguid/views/ProfilePage.dart';
 import 'package:cityguid/views/SignupScreen.dart';
 import 'package:cityguid/views/StartScreen.dart';
