@@ -1,5 +1,8 @@
 import 'package:cityguid/image/Images.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../colors/Colors.dart';
 
 void main() {
   runApp(const HospitalApp());
@@ -42,21 +45,63 @@ class HospitalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hospitals'),
-        backgroundColor: Colors.orange,
+        backgroundColor: CustomColors.LoginSignupbackColor,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Get.back(),  // Updated with Get.back()
+        ),
+        title: Text(
+          "Catigories",
+          style: TextStyle(
+            fontSize: 22,
+            color: Colors.white70,
+          ),
+        ),
+        centerTitle: true,
       ),
+      backgroundColor: CustomColors.LoginSignupbackColor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Search Hospitals',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.0),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(221, 43, 43, 43),
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3), // Outer shadow
+                          spreadRadius: 2,
+                          blurRadius: 6,
+                          offset: Offset(2, 4), // Shadow position
+                        ),
+                      ],
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search here...',
+                        hintStyle:
+                            const TextStyle(color: Colors.white54, fontSize: 18),
+                        prefixIcon:
+                            const Icon(Icons.search, color: Colors.white),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 0,
+                        ),
+                      ),
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             const SizedBox(height: 16),
             Expanded(
@@ -103,12 +148,16 @@ class HospitalCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16.0),
       ),
+      elevation: 6.0, // Add shadow effect
+      color: const Color.fromARGB(221, 43, 43, 43),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(16.0), bottom: Radius.circular(16.0)),
+              top: Radius.circular(16.0),
+              bottom: Radius.circular(16.0),
+            ),
             child: Image.asset(
               hospital.imagepath,
               height: 250,
@@ -126,12 +175,15 @@ class HospitalCard extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0,
+                    color: Colors.white, // Set text color to white
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   hospital.address,
-                  style: TextStyle(color: Colors.grey[600]),
+                  style: const TextStyle(
+                    color: Colors.white, // Set text color to white
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Row(
@@ -139,7 +191,9 @@ class HospitalCard extends StatelessWidget {
                   children: [
                     Text(
                       hospital.distance,
-                      style: TextStyle(color: Colors.grey[600]),
+                      style: const TextStyle(
+                        color: Colors.white, // Set text color to white
+                      ),
                     ),
                     Row(
                       children: [
@@ -147,7 +201,10 @@ class HospitalCard extends StatelessWidget {
                         const SizedBox(width: 4),
                         Text(
                           hospital.rating.toString(),
-                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white, // Set text color to white
+                          ),
                         ),
                       ],
                     ),
