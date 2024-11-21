@@ -76,7 +76,7 @@ class _HomescreenState extends State<Homescreen> {
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                children: [
+                children: const [
                   CategoryCard(icon: Icons.local_hospital, label: 'Hospitals'),
                   CategoryCard(icon: Icons.local_pharmacy, label: 'Pharmacy'),
                   CategoryCard(icon: Icons.school, label: 'Schools'),
@@ -134,7 +134,7 @@ class CategoryCard extends StatelessWidget {
   final IconData icon;
   final String label;
 
-  CategoryCard({required this.icon, required this.label});
+  const CategoryCard({super.key, required this.icon, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -148,7 +148,7 @@ class CategoryCard extends StatelessWidget {
         children: [
           Icon(icon, size: 40, color: Colors.orange),
           const SizedBox(height: 8),
-          Text(label, style: TextStyle(fontSize: 16)),
+          Text(label, style: const TextStyle(fontSize: 16)),
         ],
       ),
     );
@@ -156,6 +156,8 @@ class CategoryCard extends StatelessWidget {
 }
 
 class AdBanner extends StatelessWidget {
+  const AdBanner({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

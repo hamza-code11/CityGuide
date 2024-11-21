@@ -87,7 +87,7 @@ class Loginscreen extends StatelessWidget {
               textColor: Colors.white,
               borderRadius: 8.0,
               elevation: 4.0,
-              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
             ),
 
             // "Do not have an account?" Text
@@ -128,13 +128,13 @@ class Loginscreen extends StatelessWidget {
             // Divider(color: Colors.grey[800]),
             Row(
               children: [
-                Expanded(child: Divider(color: Colors.grey)),
+                const Expanded(child: Divider(color: Colors.grey)),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child:
                       Text("or", style: GoogleFonts.inter(color: Colors.grey)),
                 ),
-                Expanded(child: Divider(color: Colors.grey)),
+                const Expanded(child: Divider(color: Colors.grey)),
               ],
             ),
             SizedBox(

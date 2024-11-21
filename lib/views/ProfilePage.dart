@@ -4,14 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../colors/Colors.dart';
 import '../widgets/CustomButtom.dart';
-import '../widgets/SocialLoginButton.dart';
 
 class Profilepage extends StatelessWidget {
   final String email;
   final String password;
 
-  const Profilepage({required this.email, required this.password, Key? key})
-      : super(key: key);
+  const Profilepage({required this.email, required this.password, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +84,7 @@ class Profilepage extends StatelessWidget {
               // User Info
               Text(
                 email, // Dynamically display email
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -95,7 +93,7 @@ class Profilepage extends StatelessWidget {
 
               Text(
                 password, // Dynamically display password
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.white70,
                 ),
@@ -128,8 +126,8 @@ class Profilepage extends StatelessWidget {
                       textColor: Colors.white,
                       borderRadius: 8.0,
                       elevation: 4.0,
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 105),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 105),
                     ),
                   ],
                 ),

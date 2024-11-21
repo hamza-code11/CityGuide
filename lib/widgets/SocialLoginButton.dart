@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Socialloginbutton extends StatelessWidget {
   final IconData icon;
@@ -9,7 +8,7 @@ class Socialloginbutton extends StatelessWidget {
   final Color borderColor; 
   final double borderWidth; 
 
-  const Socialloginbutton({
+  const Socialloginbutton({super.key, 
     required this.icon,
     required this.label,
     required this.color,
@@ -25,8 +24,8 @@ class Socialloginbutton extends StatelessWidget {
       child: ElevatedButton.icon(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0xFF1C1C1E), 
-          padding: EdgeInsets.symmetric(vertical: 14),
+          backgroundColor: const Color(0xFF1C1C1E), 
+          padding: const EdgeInsets.symmetric(vertical: 14),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -36,7 +35,7 @@ class Socialloginbutton extends StatelessWidget {
         icon: Icon(icon, color: color),
         label: Text(
           label,
-          style: TextStyle(fontFamily: "inter", color: Colors.white),
+          style: const TextStyle(fontFamily: "inter", color: Colors.white),
         ),
       ),
     );
