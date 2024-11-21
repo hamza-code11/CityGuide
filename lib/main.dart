@@ -1,6 +1,10 @@
 import 'package:cityguid/firebase_options.dart';
 import 'package:cityguid/views/CategoryDetails.dart';
+import 'package:cityguid/views/HelpSupportPage.dart';
 import 'package:cityguid/views/LoginScreen.dart';
+import 'package:cityguid/views/PreferencesPage.dart';
+import 'package:cityguid/views/PrivacyPage.dart';
+import 'package:cityguid/views/settingScreen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Loginscreen(),
+      home: const PrivacyPage(),
       //home: const CategoryDetails(),
     );
   }
