@@ -21,9 +21,9 @@ class MapDirectionScreen extends StatelessWidget {
         title: const Text(
           "Map Direction",
           style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.white70,
-                ),
+            fontSize: 22,
+            color: Colors.white70,
+          ),
         ),
         centerTitle: true,
       ),
@@ -54,13 +54,14 @@ class MapDirectionScreen extends StatelessWidget {
             const Spacer(),
             // Submit Button
             CustomButton(
-              text: "Submite",
+              text: "Submit",
               onPressed: () {},
               backgroundColor: Colors.pinkAccent,
               textColor: Colors.white,
               borderRadius: 8.0,
               elevation: 4.0,
-              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
             ),
 
             const SizedBox(height: 20),

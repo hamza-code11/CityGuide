@@ -1,6 +1,8 @@
 import 'package:cityguid/views/IndexScreen.dart';
 import 'package:cityguid/views/LoginScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../colors/Colors.dart';
 import '../widgets/CustomButtom.dart';
 
 class Profilepage extends StatelessWidget {
@@ -124,8 +126,8 @@ class Profilepage extends StatelessWidget {
                       textColor: Colors.white,
                       borderRadius: 8.0,
                       elevation: 4.0,
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 10, horizontal: 105),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 105),
                     ),
                   ],
                 ),

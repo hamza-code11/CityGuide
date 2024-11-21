@@ -1,18 +1,24 @@
 import 'package:cityguid/views/MapDirectionScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CategoryDetails extends StatelessWidget {
   final String imagePath; // Image path received from the previous screen
   final String address;
-  final String name ;
+  final String name;
   final double rating;
   final String distance;
-     // Address received from the previous screen
+  // Address received from the previous screen
 
-  const CategoryDetails({super.key, required this.imagePath, required this.address , required this.name , required this.rating, required this.distance});
-  
-  
+  const CategoryDetails(
+      {super.key,
+      required this.imagePath,
+      required this.address,
+      required this.name,
+      required this.rating,
+      required this.distance});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -288,12 +294,9 @@ class CategoryDetails extends StatelessWidget {
 
             // Right Elevated Button (Direct)
             ElevatedButton.icon(
-               onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MapDirectionScreen()));
-                  },
+              onPressed: () {
+                redirectToGoogleMaps(address);
+              },
               icon: const Icon(Icons.send, color: Colors.white, size: 18),
               label: const Text(
                 "Direction",
@@ -367,15 +370,13 @@ class ReviewCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Profile Section
             Row(
               children: [
                 CircleAvatar(
                   radius: 24,
                   backgroundColor: Colors.white24,
-                  backgroundImage: profileImage != null
-                      ? AssetImage(profileImage!) // Local image
-                      : null,
+                  backgroundImage:
+                      profileImage != null ? AssetImage(profileImage!) : null,
                   child: profileImage == null
                       ? Text(
                           name[0],
@@ -408,7 +409,6 @@ class ReviewCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            // Comment Section
             Text(
               comment,
               style: GoogleFonts.poppins(
@@ -420,5 +420,21 @@ class ReviewCard extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+/// Redirects a given search query to Google Maps.
+Future<void> redirectToGoogleMaps(String searchQuery) async {
+  // Encode the search query to make it URL-safe
+  final String encodedQuery = Uri.encodeComponent(searchQuery);
+  // Create the Google Maps search URL
+  final String googleMapsUrl =
+      'https://www.google.com/maps/search/?api=1&query=$encodedQuery';
+
+  // Check if the URL can be launched
+  if (await canLaunchUrl(Uri.parse(googleMapsUrl))) {
+    await launchUrl(Uri.parse(googleMapsUrl));
+  } else {
+    throw 'Could not launch $googleMapsUrl';
   }
 }
