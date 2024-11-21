@@ -14,12 +14,12 @@ class HospitalApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hospitals',
-      home: HospitalScreen(),
+      home: Parkscreen(),
     );
   }
 }
 
-class HospitalScreen extends StatelessWidget {
+class Parkscreen extends StatelessWidget {
   final List<Hospital> hospitals = [
     Hospital(
       name: 'SV Medical Hall',
@@ -38,7 +38,7 @@ class HospitalScreen extends StatelessWidget {
     ),
   ];
 
-  HospitalScreen({super.key}); // Fixed constructor
+  Parkscreen({super.key}); // Fixed constructor
 
   @override
   Widget build(BuildContext context) {

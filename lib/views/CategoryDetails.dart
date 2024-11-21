@@ -1,11 +1,18 @@
-import 'package:cityguid/views/CategoriesScreen.dart';
 import 'package:cityguid/views/MapDirectionScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryDetails extends StatelessWidget {
-  const CategoryDetails({super.key});
+  final String imagePath; // Image path received from the previous screen
+  final String address;
+  final String name ;
+  final double rating;
+  final String distance;
+     // Address received from the previous screen
 
+  const CategoryDetails({super.key, required this.imagePath, required this.address , required this.name , required this.rating, required this.distance});
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,14 +21,13 @@ class CategoryDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top Image Section with Gradient
             Stack(
               children: [
                 Container(
                   height: 300,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/medical-hall.png'),
+                      image: AssetImage(imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -70,7 +76,7 @@ class CategoryDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "SV Medical Hall",
+                    name,
                     style: GoogleFonts.poppins(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
@@ -83,7 +89,7 @@ class CategoryDetails extends StatelessWidget {
                       const Icon(Icons.star, color: Colors.amber, size: 18),
                       const SizedBox(width: 4),
                       Text(
-                        "4.7 • 1,399 reviews",
+                        rating.toString(),
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: Colors.white70,
@@ -93,7 +99,7 @@ class CategoryDetails extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "3729+5CH, Medak-Yellareddy Rd, Fathe Nagar,\nMedak, Telangana, India",
+                    address,
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Colors.white70,
@@ -101,7 +107,7 @@ class CategoryDetails extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "3.8 km",
+                    distance,
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Colors.tealAccent,
@@ -286,7 +292,7 @@ class CategoryDetails extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MapDirectionScreen()));
+                            builder: (context) => const MapDirectionScreen()));
                   },
               icon: const Icon(Icons.send, color: Colors.white, size: 18),
               label: const Text(

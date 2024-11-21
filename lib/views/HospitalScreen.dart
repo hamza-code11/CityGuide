@@ -75,14 +75,14 @@ class HospitalScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(221, 43, 43, 43),
+                      color: const Color.fromARGB(221, 43, 43, 43),
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3), // Outer shadow
                           spreadRadius: 2,
                           blurRadius: 6,
-                          offset: Offset(2, 4), // Shadow position
+                          offset: const Offset(2, 4), // Shadow position
                         ),
                       ],
                     ),

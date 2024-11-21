@@ -1,4 +1,6 @@
 import 'package:cityguid/firebase_options.dart';
+import 'package:cityguid/views/CategoryDetails.dart';
+import 'package:cityguid/views/LoginScreen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -34,8 +36,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Loginscreen(),
-
+      home: const Loginscreen(),
+      //home: const CategoryDetails(),
     );
   }
 }

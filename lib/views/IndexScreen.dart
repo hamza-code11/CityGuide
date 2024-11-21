@@ -175,7 +175,7 @@ class _IndexscreenState extends State<Indexscreen> {
                       },
                   ),
                   CategoryCard(
-                    title: 'Pharmacy',
+                    title: 'Parks',
                     imagePath: 'assets/images/p2.jpg',
                      onTap: () {
                          Navigator.push(

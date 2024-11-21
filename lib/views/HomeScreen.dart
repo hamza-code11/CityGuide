@@ -76,7 +76,7 @@ class _HomescreenState extends State<Homescreen> {
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                children: [
+                children: const [
                   CategoryCard(icon: Icons.local_hospital, label: 'Hospitals'),
                   CategoryCard(icon: Icons.local_pharmacy, label: 'Pharmacy'),
                   CategoryCard(icon: Icons.school, label: 'Schools'),

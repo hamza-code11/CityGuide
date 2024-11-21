@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import '../widgets/CustomButtom.dart';
 
 class MapDirectionScreen extends StatelessWidget {
+  const MapDirectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,10 +15,10 @@ class MapDirectionScreen extends StatelessWidget {
         backgroundColor: CustomColors.LoginSignupbackColor,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Get.back(), // Updated with Get.back()
         ),
-        title: Text(
+        title: const Text(
           "Map Direction",
           style: TextStyle(
                   fontSize: 22,
@@ -31,25 +33,25 @@ class MapDirectionScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Location Map Section
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               height: Get.height * 0.5,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('assets/images/Mapplaceholder.png'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Location Details
-            Text(
+            const Text(
               '3729+5CH, Medak-Yellareddy Rd, Fathe Nagar,\nMedak, Telangana, India',
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
-            SizedBox(height: 8),
-            Spacer(),
+            const SizedBox(height: 8),
+            const Spacer(),
             // Submit Button
             CustomButton(
               text: "Submite",
@@ -58,10 +60,10 @@ class MapDirectionScreen extends StatelessWidget {
               textColor: Colors.white,
               borderRadius: 8.0,
               elevation: 4.0,
-              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
