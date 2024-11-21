@@ -2,7 +2,6 @@ import 'package:cityguid/views/IndexScreen.dart';
 import 'package:cityguid/views/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../colors/Colors.dart';
 import '../widgets/CustomButtom.dart';
 import '../widgets/SocialLoginButton.dart';

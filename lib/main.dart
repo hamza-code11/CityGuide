@@ -1,8 +1,4 @@
 import 'package:cityguid/firebase_options.dart';
-import 'package:cityguid/views/IndexScreen.dart';
-import 'package:cityguid/views/LoginScreen.dart';
-import 'package:cityguid/views/ProfilePage.dart';
-import 'package:cityguid/views/SignupScreen.dart';
 import 'package:cityguid/views/StartScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
