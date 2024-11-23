@@ -1,6 +1,8 @@
 import 'package:cityguid/colors/Colors.dart';
+import 'package:cityguid/views/ContactScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PrivacyPage extends StatelessWidget {
   const PrivacyPage({super.key});
@@ -151,12 +153,36 @@ class PrivacyPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              ElevatedButton(
+              TextButton(
                 onPressed: () {
-                  // Implement privacy settings saving functionality
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  Contactscreen()));
                 },
-                child: Text('Save Privacy Settings'),
-              ),
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  ),
+                  backgroundColor: MaterialStateProperty.all(Colors.pinkAccent),
+                  foregroundColor: MaterialStateProperty.all(Colors.black),
+                  overlayColor: MaterialStateProperty.all(
+                    Colors.teal.withOpacity(0.2),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+                child: Text(
+                  "Contact",
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              )
             ],
           ),
         ),

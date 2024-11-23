@@ -1,5 +1,7 @@
 import 'package:cityguid/colors/Colors.dart';
+import 'package:cityguid/views/ContactScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HelpSupportPage extends StatelessWidget {
   const HelpSupportPage({super.key});
@@ -146,21 +148,36 @@ class HelpSupportPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Text(
-                'To help you get the most out of the City Guide app, we have created detailed guides and video tutorials. You can find these resources under the "Help Center" section in the app or visit our website at www.cityguide.com/help.',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  height: 1.5,
-                ),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
+               TextButton(
                 onPressed: () {
-                  // Implement contact support functionality
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  Contactscreen()));
                 },
-                child: Text('Contact Support'),
-              ),
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  ),
+                  backgroundColor: MaterialStateProperty.all(Colors.pinkAccent),
+                  foregroundColor: MaterialStateProperty.all(Colors.black),
+                  overlayColor: MaterialStateProperty.all(
+                    Colors.teal.withOpacity(0.2),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+                child: Text(
+                  "Contact",
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              )
             ],
           ),
         ),

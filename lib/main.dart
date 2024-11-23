@@ -1,7 +1,10 @@
 import 'package:cityguid/firebase_options.dart';
 import 'package:cityguid/views/CategoryDetails.dart';
+import 'package:cityguid/views/ContactScreen.dart';
 import 'package:cityguid/views/HelpSupportPage.dart';
+import 'package:cityguid/views/HospitalScreen%20copy%203.dart';
 import 'package:cityguid/views/LoginScreen.dart';
+import 'package:cityguid/views/ParkScreen.dart';
 import 'package:cityguid/views/PreferencesPage.dart';
 import 'package:cityguid/views/PrivacyPage.dart';
 import 'package:cityguid/views/StartScreen.dart';
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Startscreen(),
+      home: HospitalScreen(),
     );
   }
 }
