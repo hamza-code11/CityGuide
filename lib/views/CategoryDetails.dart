@@ -1,3 +1,4 @@
+import 'package:cityguid/views/CategoriesScreen.dart';
 import 'package:cityguid/views/MapDirectionScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -240,7 +241,14 @@ class CategoryDetails extends StatelessWidget {
           children: [
             // Left Icon (Call)
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Categoriesscreen(),
+                  ),
+                );
+              },
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [

@@ -1,5 +1,9 @@
 import 'package:cityguid/image/Images.dart';
+import 'package:cityguid/views/IndexScreen.dart';
+import 'package:cityguid/views/ProfilePage.dart';
+import 'package:cityguid/views/settingScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const Categoriesscreen());
@@ -41,22 +45,122 @@ class Categoriesscreen extends StatelessWidget {
             ),
           ),
         ),
+        
         body: ListView(
-          padding:const EdgeInsets.all(16.0),
-          children:const [
+          padding: const EdgeInsets.all(16.0),
+          children: const [
             ContactCard(
               name: 'Jenny Wilson',
               rating: '4.7',
               color: Colors.yellow,
-              imagePath:  'assets/images/contact2.png',
+              imagePath: 'assets/images/contact2.png',
             ),
-            ContactCard(name: 'Leslie Alexander', rating: '4.7', color: Colors.orange,imagePath: 'assets/images/contact2.png',),
-            ContactCard(name: 'Kristin Watson', rating: '4.7', color: Colors.blueGrey,imagePath: 'assets/images/contact3.png',),
-            ContactCard(name: 'Jane Cooper', rating: '4.7', color: Colors.pinkAccent,imagePath: 'assets/images/contact4.png',),
-            ContactCard(name: 'Brooklyn Simmons', rating: '4.7', color: Colors.yellow , imagePath: 'assets/images/contact5.png',),
-            ContactCard(name: 'Jerome Bell', rating: '4.7', color: Colors.pinkAccent ,imagePath: 'assets/images/contact6.png',),
-            ContactCard(name: 'Kathryn Murphy', rating: '4.7', color: Colors.purple , imagePath: 'assets/images/contact7.png',),
+            ContactCard(
+              name: 'Leslie Alexander',
+              rating: '4.7',
+              color: Colors.orange,
+              imagePath: 'assets/images/contact2.png',
+            ),
+            ContactCard(
+              name: 'Kristin Watson',
+              rating: '4.7',
+              color: Colors.blueGrey,
+              imagePath: 'assets/images/contact3.png',
+            ),
+            ContactCard(
+              name: 'Jane Cooper',
+              rating: '4.7',
+              color: Colors.pinkAccent,
+              imagePath: 'assets/images/contact4.png',
+            ),
+            ContactCard(
+              name: 'Brooklyn Simmons',
+              rating: '4.7',
+              color: Colors.yellow,
+              imagePath: 'assets/images/contact5.png',
+            ),
+            ContactCard(
+              name: 'Jerome Bell',
+              rating: '4.7',
+              color: Colors.pinkAccent,
+              imagePath: 'assets/images/contact6.png',
+            ),
+            ContactCard(
+              name: 'Kathryn Murphy',
+              rating: '4.7',
+              color: Colors.purple,
+              imagePath: 'assets/images/contact7.png',
+            ),
           ],
+        ),
+        bottomNavigationBar: Container(
+          decoration: const BoxDecoration(
+            color: Color(0xff322e3a),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black38,
+                blurRadius: 10,
+                offset: Offset(0, -1),
+              ),
+            ],
+          ),
+          child: Padding(
+            padding:
+                const EdgeInsets.only(bottom: 25, left: 8, right: 8, top: 10),
+            child: BottomNavigationBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: Colors.grey, // Set selected icon color to grey
+              unselectedItemColor:
+                  Colors.grey, // Set unselected icon color to grey
+              showUnselectedLabels: true,
+              selectedLabelStyle: GoogleFonts.inter(
+                color: Colors.grey, // Set selected label color to grey
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+              onTap: (index) {
+                if (index == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Indexscreen()),
+                  );
+                } else if (index == 1) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Profilepage()),
+                  );
+                } else if (index == 2) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Settingscreen()),
+                  );
+                }
+              },
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.location_pin),
+                  label: 'Missing place',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: 'Settings',
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -91,8 +195,11 @@ class ContactCard extends StatelessWidget {
           CircleAvatar(
             backgroundColor: color,
             radius: 20,
-            backgroundImage: imagePath != null ? AssetImage(ImagesPath.logo) : null,
-            child: imagePath == null ? const Icon(Icons.person, color: Colors.black) : null,
+            backgroundImage:
+                imagePath != null ? AssetImage(ImagesPath.logo) : null,
+            child: imagePath == null
+                ? const Icon(Icons.person, color: Colors.black)
+                : null,
           ),
           const SizedBox(width: 10),
           Column(

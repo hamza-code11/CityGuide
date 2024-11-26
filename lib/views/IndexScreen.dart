@@ -273,42 +273,32 @@ class _IndexscreenState extends State<Indexscreen> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.pinkAccent,
-            unselectedItemColor: Colors.grey,
+            selectedItemColor: Colors.grey, // Set selected icon color to grey
+            unselectedItemColor:
+                Colors.grey, // Set unselected icon color to grey
             showUnselectedLabels: true,
             selectedLabelStyle: GoogleFonts.inter(
-              color: Colors.white,
+              color: Colors.grey, // Set selected label color to grey
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
-            currentIndex: _selectedIndex,
             onTap: (index) {
-              _onItemTapped(index);
-              switch (index) {
-                case 0:
-                  // Navigate to Home Screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Indexscreen()),
-                  );
-                  break;
-                case 1:
-                  // Navigate to Missing Place Screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Profilepage()),
-                  );
-                  break;
-                case 2:
-                  // Navigate to Settings Screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Settingscreen()),
-                  );
-                  break;
+              if (index == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Indexscreen()),
+                );
+              } else if (index == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Profilepage()),
+                );
+              } else if (index == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Settingscreen()),
+                );
               }
             },
             items: const [
