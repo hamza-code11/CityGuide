@@ -7,10 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Indexscreen extends StatefulWidget {
-  final String email;
-  final String password;
-
-  const Indexscreen({required this.email, required this.password, super.key});
+  const Indexscreen({super.key});
 
   @override
   State<Indexscreen> createState() => _IndexscreenState();
@@ -293,7 +290,7 @@ class _IndexscreenState extends State<Indexscreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Settingscreen()),
+                        builder: (context) => const Indexscreen()),
                   );
                   break;
                 case 1:
@@ -301,7 +298,7 @@ class _IndexscreenState extends State<Indexscreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Settingscreen()),
+                        builder: (context) => const Profilepage()),
                   );
                   break;
                 case 2:

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cityguid/views/IndexScreen.dart';
 import 'package:cityguid/views/settingScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -29,7 +30,7 @@ class Contactcontroller extends GetxController {
         isloading.value = false;
         Get.snackbar("Success", "Message has been Submited");
         update();
-        Get.to(() => Settingscreen());
+        Get.to(() => Indexscreen());
       });
     } catch (e) {
       log(e.toString());

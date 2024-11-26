@@ -60,7 +60,7 @@ class LoginController extends GetxController {
         .then((value) {
       Get.snackbar("Success", "Login Successfully");
       update();
-      Get.to(() => Indexscreen(email: email, password: password));
+      Get.to(() => Indexscreen());
     }).catchError((error) {
       Get.snackbar("Error", error.message ?? "Something went wrong");
     });

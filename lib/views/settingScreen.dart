@@ -1,4 +1,5 @@
 import 'package:cityguid/colors/Colors.dart';
+import 'package:cityguid/views/ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'PreferencesPage.dart';
 import 'PrivacyPage.dart';
@@ -38,7 +39,10 @@ class Settingscreen extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             onTap: () {
-              // Navigate to Personal Info
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Profilepage()),
+              );
             },
           ),
           Divider(color: Colors.grey[800]),

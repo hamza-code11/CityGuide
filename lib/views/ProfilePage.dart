@@ -108,8 +108,7 @@ class Profilepage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          Indexscreen(email: email, password: "********"),
+                      builder: (context) => Indexscreen(),
                     ),
                   );
                 },
