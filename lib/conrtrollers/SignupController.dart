@@ -9,6 +9,7 @@ class SignupController extends GetxController {
   var isObsecure = true.obs;
   var isloading = false.obs;
 
+  final userController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
 
@@ -32,9 +33,12 @@ class SignupController extends GetxController {
       // Save user data to Firestore
       await FirebaseFirestore.instance.collection("User").doc(uid).set({
         "id": uid, // Save the unique ID
+        "username": userController.text.trim(),
         "email": emailController.text.trim(),
-        "password": passController.text.trim(), // Avoid plaintext passwords in production
-        "createdAt": FieldValue.serverTimestamp(), // Timestamp for record creation
+        "password": passController.text
+            .trim(), // Avoid plaintext passwords in production
+        "createdAt":
+            FieldValue.serverTimestamp(), // Timestamp for record creation
       });
 
       Get.snackbar("Success", "User registered successfully.");

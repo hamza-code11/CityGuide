@@ -1,6 +1,7 @@
 import 'package:cityguid/views/BankScreen.dart';
 import 'package:cityguid/views/HospitalScreen.dart';
 import 'package:cityguid/views/ProfilePage.dart';
+import 'package:cityguid/views/settingScreen.dart';
 import 'package:cityguid/widgets/CategoryCard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -59,11 +60,7 @@ class _IndexscreenState extends State<Indexscreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Profilepage(
-                            email: widget.email,
-                            password: widget
-                                .password, // Pass the actual password, not dots
-                          ),
+                          builder: (context) => Profilepage(),
                         ),
                       );
                     },
@@ -122,8 +119,8 @@ class _IndexscreenState extends State<Indexscreen> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   hintText: 'Search here...',
-                                  hintStyle:
-                                      const TextStyle(color: Colors.white, fontSize: 24),
+                                  hintStyle: const TextStyle(
+                                      color: Colors.white, fontSize: 24),
                                   prefixIcon: const Icon(Icons.search,
                                       color: Colors.white),
                                   border: OutlineInputBorder(
@@ -167,82 +164,89 @@ class _IndexscreenState extends State<Indexscreen> {
                   CategoryCard(
                     title: 'Hospitals',
                     imagePath: 'assets/images/p1.jpg',
-                      onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Parks',
                     imagePath: 'assets/images/p2.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Schools',
                     imagePath: 'assets/images/p3.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Plumbers',
                     imagePath: 'assets/images/p4.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Electricians',
                     imagePath: 'assets/images/p5.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Hair Salon',
                     imagePath: 'assets/images/p6.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Colleges',
                     imagePath: 'assets/images/p7.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => HospitalScreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HospitalScreen()),
+                      );
+                    },
                   ),
                   CategoryCard(
                     title: 'Banks',
                     imagePath: 'assets/images/p8.jpg',
-                     onTap: () {
-                         Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => Bankscreen()),
-                          );
-                      },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Bankscreen()),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -281,7 +285,35 @@ class _IndexscreenState extends State<Indexscreen> {
               fontWeight: FontWeight.w600,
             ),
             currentIndex: _selectedIndex,
-            onTap: _onItemTapped,
+            onTap: (index) {
+              _onItemTapped(index);
+              switch (index) {
+                case 0:
+                  // Navigate to Home Screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Settingscreen()),
+                  );
+                  break;
+                case 1:
+                  // Navigate to Missing Place Screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Settingscreen()),
+                  );
+                  break;
+                case 2:
+                  // Navigate to Settings Screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Settingscreen()),
+                  );
+                  break;
+              }
+            },
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),

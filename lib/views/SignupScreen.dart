@@ -28,6 +28,18 @@ class Signupscreen extends StatelessWidget {
             SizedBox(
               height: Get.height * 0.04,
             ),
+            // username Text Field
+            Loginsignuptextfield(
+              controller: controller.userController,
+              hinttext: "Username",
+              hintTextColor: Colors.grey,
+              borderRadius: 8,
+              borderSideColor: Colors.white60,
+              textColor: Colors.white,
+            ),
+            SizedBox(
+              height: Get.height * 0.02,
+            ),
             // Email Text Field
             Loginsignuptextfield(
               controller: controller.emailController,

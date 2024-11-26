@@ -7,6 +7,7 @@ import 'package:cityguid/views/LoginScreen.dart';
 import 'package:cityguid/views/ParkScreen.dart';
 import 'package:cityguid/views/PreferencesPage.dart';
 import 'package:cityguid/views/PrivacyPage.dart';
+import 'package:cityguid/views/ProfilePage.dart';
 import 'package:cityguid/views/StartScreen.dart';
 import 'package:cityguid/views/settingScreen.dart';
 
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HospitalScreen(),
+      home: Startscreen(),
     );
   }
 }
