@@ -41,6 +41,9 @@ class SignupController extends GetxController {
             FieldValue.serverTimestamp(), // Timestamp for record creation
       });
 
+      // Update displayName in Firebase Authentication
+      await userCredential.user?.updateDisplayName(userController.text.trim());
+
       Get.snackbar("Success", "User registered successfully.");
       Get.to(() => const Loginscreen());
     } catch (error) {
