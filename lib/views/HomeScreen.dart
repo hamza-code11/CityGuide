@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -8,14 +10,6 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,11 +51,14 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                     child: const Row(
                       children: [
-                        Icon(Icons.search, color: Color.fromARGB(255, 255, 255, 255)),
+                        Icon(Icons.search,
+                            color: Color.fromARGB(255, 255, 255, 255)),
                         SizedBox(width: 12),
                         Text(
                           'Search anymore?',
-                          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 18),
                         ),
                       ],
                     ),
@@ -88,44 +85,7 @@ class _HomescreenState extends State<Homescreen> {
           ],
         ),
       ),
-bottomNavigationBar: Container(
-  decoration: BoxDecoration(
-    color: Colors.grey[800], // Grey color for the bottom bar
-    borderRadius: const BorderRadius.only(
-      topLeft: Radius.circular(30),
-      topRight: Radius.circular(30),
-    ),
-  ),
-  height: 100, // Set the height of the bottom bar
-  child: ClipRRect(
-    borderRadius: const BorderRadius.only(
-      topLeft: Radius.circular(30),
-      topRight: Radius.circular(30),
-    ),
-    child: BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.place),
-          label: 'Places',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle),
-          label: 'Account',
-        ),
-      ],
-      currentIndex: _selectedIndex,
-      selectedItemColor: Colors.orange,
-      unselectedItemColor: Colors.white, // Color for unselected items
-      onTap: _onItemTapped,
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.grey[800],
-    ),
-  ),
-),
+     
     );
   }
 }

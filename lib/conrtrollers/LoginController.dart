@@ -30,11 +30,11 @@
 // }
 
 import 'package:cityguid/views/IndexScreen.dart';
+import 'package:cityguid/views/navigation_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 class LoginController extends GetxController {
   var isObsecure = true.obs; // Password visibility toggle
@@ -60,13 +60,11 @@ class LoginController extends GetxController {
         .then((value) {
       Get.snackbar("Success", "Login Successfully");
       update();
-      Get.to(() => Indexscreen());
+      Get.to(() => const NavigationMenu());
     }).catchError((error) {
       Get.snackbar("Error", error.message ?? "Something went wrong");
     });
   }
-
-
 
   Future<void> saveUserData(String email, String password) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -74,14 +72,10 @@ class LoginController extends GetxController {
     await prefs.setString('password', password);
   }
 
-
   Future<Map<String, String?>> getUserData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? email = prefs.getString('email');
     String? password = prefs.getString('password');
     return {'email': email, 'password': password};
   }
-
-
-
 }
